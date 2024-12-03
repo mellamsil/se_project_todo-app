@@ -5,13 +5,14 @@ class Todo {
   }
 
   _setEventListener() {
-    // TODO - set up the delete button handler
-    // this._todoDeleteBtn.addEventListener("change", () => {
-    //   this._datatodoElement.remove();
-    // });
     this._todoCheckboxEl.addEventListener("change", () => {
       this._data.completed = !this._data.completed;
     });
+    this._todoDeleteBtn.addEventListener("click", () => {
+      this._todoElement.remove();
+      this._todoElement = null;
+    });
+
     // when clicked, change completion status from true to false, or vice versa
   }
 
@@ -28,18 +29,28 @@ class Todo {
       .querySelector(".todo")
       .cloneNode(true);
 
-    const todoNameEl = this._todoElement.querySelector(".todo__name");
-    const todoDate = this._todoElement.querySelector(".todo__date");
-    const todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
+    this._todoNameEl = this._todoElement.querySelector(".todo__name");
+    this._todoDate = this._todoElement.querySelector(".todo__date");
+    this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
 
-    todoNameEl.textContent = this._data.name;
-    // TODO - implement dates
+    this._todoNameEl.textContent = this._data.name;
 
-    this._generateCheckboxEl();
-    this._setEventListener();
+    this._dueDate = new Date(this._data.date);
+    if (!isNaN(this._dueDate)) {
+      this._todoDate.textContent = `Due: ${this._dueDate.toLocaleString(
+        "en-US",
+        {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        }
+      )}`;
 
-    return this._todoElement;
+      this._generateCheckboxEl();
+      this._setEventListener();
+
+      return this._todoElement;
+    }
   }
 }
-
 export default Todo;

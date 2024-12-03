@@ -1,11 +1,8 @@
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
-console.log(uuidv4());
 
 import { initialTodos, validationConfig } from "../utils/constants.js";
 import Todo from "../components/Todo.js";
 import formValidator from "../components/FormValidator.js";
-
-// instantiate
 
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopup = document.querySelector("#add-todo-popup");
