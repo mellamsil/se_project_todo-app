@@ -45,12 +45,12 @@ class Todo {
           day: "numeric",
         }
       )}`;
-
-      this._generateCheckboxEl();
-      this._setEventListener();
-
-      return this._todoElement;
     }
+
+    this._generateCheckboxEl();
+    this._setEventListener();
+
+    return this._todoElement;
   }
 }
 export default Todo;
