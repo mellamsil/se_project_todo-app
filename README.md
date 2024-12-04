@@ -29,7 +29,7 @@ Below are some screenshots showcasing the app's features:
 
 ## Screenshot
 
-![Project features] (image/project7screenshot.png)
+![Project features](image.png)
 
 ## Deployment
 
