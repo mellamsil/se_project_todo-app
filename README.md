@@ -35,4 +35,4 @@ Below are some screenshots showcasing the app's features:
 
 This project is deployed on GitHub Pages:
 
-- Deployment Link:
+- Deployment Link: https://github.com/mellamsil/se_project_todo-app.git
