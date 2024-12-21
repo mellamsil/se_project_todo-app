@@ -27,16 +27,18 @@ function handleCheck(checked) {
   counter.updateCompleted(checked);
 }
 
-function handleDelete(completed) {
+// Your cards are still being deleted by your _remove() function in your todo.js
+// This is the function that be deleting them.
+const handleDelete = (completed) => {
   counter.updateTotal(false);
 
   if (completed) {
     counter.updateCompleted(false);
   }
-}
+};
 
 const generateTodo = (data) => {
-  const todo = new Todo(data, "#todo-template", handleCheck);
+  const todo = new Todo(data, "#todo-template", handleCheck, handleDelete);
   const todoElement = todo.getView();
   return todoElement;
 };

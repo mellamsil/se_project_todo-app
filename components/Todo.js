@@ -7,7 +7,7 @@ class Todo {
     this._id = data.id || uuidv4();
     this._selector = selector;
     this._handlecheck = handleCheck;
-    this._handleDelete = handleCheck;
+    this._handleDelete = handleDelete;
 
     //this._templateElement = document.querySelector(selector);
   }
