@@ -10,17 +10,9 @@ class PopupWithForm extends Popup {
   }
 
   _getInputValues() {
-    // move to constructor
     const inputValues = {};
     this._inputList.forEach((input) => {
       inputValues[input.name] = input.value;
-
-      // TODO
-      // to do this section, refer back to sprint, the first lesson on object
-      // add a key/value pair to the values object for eaach input
-      // the key is input.name
-      // the value is input.value
-      // need to use brackets notation, not dot notation
     });
     return inputValues;
   }
@@ -31,7 +23,6 @@ class PopupWithForm extends Popup {
       evt.preventDefault();
       const inputValues = this._getInputValues();
 
-      // TODO - Pass results of _getInputValues to submission handler
       this._handleFormSubmit(inputValues);
     });
   }
