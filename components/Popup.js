@@ -27,8 +27,7 @@ class Popup {
       }
     });
 
-    const closeBtn = this._popupElement.querySelector(".popup__close");
-    closeBtn.addEventListener("click", () => {
+    this._popupCloseBtn.addEventListener("click", () => {
       this.close();
     });
   }
